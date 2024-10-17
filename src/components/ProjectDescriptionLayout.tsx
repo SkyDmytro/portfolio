@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { TechStack } from "./TechStack";
+import "../styles/buttonAnimation.css";
+import redirect from "../assets/icons8-share-24.png";
 
 export interface ProjectDescriptionLayoutProps {
   children: ReactNode;
@@ -19,9 +21,13 @@ export const ProjectDescriptionLayout = ({
       <span className="font-bold">{title}</span>
       <TechStack techs={techStack} />
       <div className="max-w-2xl">{children}</div>
-      <div className="bg-lightBlue py-2 px-4 rounded-xl w-fit font-bold hover:bg-primaryFont hover:text-blue transition duration-500 bg-opacity-75">
-        <a href={projectUrl} target="_blank" className="opacity-100">
-          <span className="opacity-100">Show Project</span>
+      <div className="hover-button-animation rounded-xl w-fit  ">
+        <a
+          href={projectUrl}
+          className="opacity-100 flex items-center gap-2 rounded-xl"
+        >
+          <span className="opacity-100">Project Showcase</span>
+          <img src={redirect} alt="redirect" className="h-4 w-4" />
         </a>
       </div>
     </div>

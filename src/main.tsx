@@ -9,9 +9,32 @@ import "./fonts/SourceSansPro-BoldIt.otf";
 import "./fonts/SourceSansPro-ExtraLight.otf";
 import "./fonts/SourceSansPro-ExtraLightIt.otf";
 import "./fonts/SourceSansPro-Regular.otf";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { TypingTestProjectPage } from "./pages/TypingTestProjectPage.tsx";
+import { StarWarsPage } from "./pages/StarWarsPage.tsx";
+import { MobileChatPage } from "./pages/MobileChatPage.tsx";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/typingTest",
+    element: <TypingTestProjectPage />,
+  },
+  {
+    path: "/starWars",
+    element: <StarWarsPage />,
+  },
+  {
+    path: "/chat",
+    element: <MobileChatPage />,
+  },
+]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </StrictMode>
 );
